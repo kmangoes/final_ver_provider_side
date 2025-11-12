@@ -14,6 +14,8 @@ input {
     border-width: 1px; 
     color: black;
 }
+
+
 input::placeholder {
     color: rgb(188, 180, 180);
 }
