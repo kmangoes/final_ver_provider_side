@@ -18,22 +18,12 @@ p:hover {
     bottom: 20px; 
     width: calc(275px - 45px); 
 }
-.side_navbar {
-    grid-template-rows: 75% 25%; 
-    position: fixed; 
-    margin-top: 70px; /* To account for fixed topbar */
-    width: 275px;
-    height: calc(100vh - 70px); /* Full height minus topbar */
-    padding-left: 45px; 
-    padding-bottom: 25px; 
-}
 .topbar {
     width: 100%; 
     height: 70px;
     position: fixed;
     top: 0; 
     left: 0;
-
     display: flex; /* Use flexbox for content layout */
     align-items: center; 
     padding-left: 80px;
@@ -44,15 +34,23 @@ p:hover {
 }
 .dashboard {
     display: grid; 
-    grid-template-columns: 275px 1fr; /* Side navbar and main content */
+    grid-template-columns: 1fr; /* Side navbar and main content */
+    width: 100%;
     height: calc(100vh - 70px);
     margin-top: 70px; /*To account for the fixed topbar*/
 }
+.side_navbar {
+    grid-template-rows: 75% 25%; 
+    position: fixed; /* no longer part of grid template */
+    padding-top: 55px; /* To account for fixed topbar */
+    width: 275px;
+    height: calc(100vh - 70px); /* Full height minus topbar */
+    padding-left: 45px; /* content in container padded */
+}
 .main_content {
     grid-template-rows: 75px 1fr; /* title and scrollable content area */
-    margin-left: 50px; 
+    margin-left: 280px; 
     padding-top: 20px;
     height: calc(100vh - 70px);
-    width: calc(100% - 275px);
     text-align: left; 
 }
