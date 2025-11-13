@@ -20,23 +20,27 @@ public class Reviews {
     private String reviewText;
     @Column(nullable = false) 
     private int starRating;
+    @Column(nullable = false)
+    private String cafeName; 
     @Column 
     private String reviewDate;
 
     public Reviews() { } //empty constructor for JPA
 
-    public Reviews(String userName, String reviewText, int starRating, String reviewDate) {
+    public Reviews(String userName, String reviewText, int starRating, String reviewDate, String cafeName) {
         this.userName = userName;
         this.reviewText = reviewText;
         this.starRating = starRating;
         this.reviewDate = reviewDate;
+        this.cafeName = cafeName;
     }
-    public Reviews(Long reviewId, String userName, String reviewText, int starRating, String reviewDate) {
+    public Reviews(Long reviewId, String userName, String reviewText, int starRating, String reviewDate, String cafeName) {
         this.reviewId = reviewId;
         this.userName = userName;
         this.reviewText = reviewText;
         this.starRating = starRating;
         this.reviewDate = reviewDate;
+        this.cafeName = cafeName; 
     }
 
     public Long getReviewId(Long reviewId) {
@@ -68,6 +72,12 @@ public class Reviews {
     }
     public void setReviewDate(String reviewDate) {
         this.reviewDate = reviewDate;
+    }
+    public String getCafeName(String cafeName) {
+        return cafeName; 
+    }
+    public void setCafeName(String cafeName) {
+        this.cafeName = cafeName; 
     }
     
 }

@@ -26,7 +26,7 @@ i {
 
 .d-flex justify-content-left gap-5 {
     flex-direction: row; 
-    background: rgba(244, 239, 231, 0.2);
+    background: rgba(244, 239, 231, 0.1);
     backdrop-filter: blur(10px);
     position: fixed; 
     width: 100%;
@@ -39,9 +39,18 @@ i {
     transform: translateY(-5px);
     transition: margin 10.0s ease-in-out;
 }
-.side_navbar {
+.col-sm {
     margin-top: 50px; 
     margin-left: 35px; 
     width: 28%; 
+    max-width: 300px;;
     height: 500px; 
+}
+.bottom_bar {
+    margin-left: 35px; 
+    width: 28%;
+}
+.main_content {
+    margin-left: 40%; 
+    
 }
