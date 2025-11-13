@@ -17,20 +17,17 @@ main {
 }
 
 .top_elem {
-    font-size: 18px; 
+    font-size: 25px; 
     font-weight: bold; 
 }
 .edit_btn1 {
-    font-size: 13px;
+    margin-top: 10px;
     float: right;
     margin-right: 15%;
 }
-.edit_btn2 {
-    margin-right: 15px;
-    float: right;
-    font-size: 13px;
-}
+
 .edit_btn1, .edit_btn2 {
+    font-size: 13px;
     border-radius: 8px;
     border: 1px solid black;
 }
@@ -84,5 +81,15 @@ main {
     border: 1px solid black; 
     border-radius: 8px;
     width: 90%; 
-    height: 100px;
+    height: 125px;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+.edit_btn2 {
+    float: right;
+    margin-right: 5%;
+}
+.user_items:hover {
+    background-color: #f4efe7;
+    cursor:default
 }
