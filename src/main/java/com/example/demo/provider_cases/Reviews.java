@@ -26,9 +26,9 @@ public class Reviews {
     @Column 
     private String reviewDate;
 
-    /* Each  */
+    /* json requests must include cafe { cafeId : __} of the desired cafe*/
     @ManyToOne
-    @JoinColumn(name = "cafe_id", nullable=false)
+    @JoinColumn(name = "cafeId", nullable=false)
     private Cafes cafe; 
 
     public Reviews() { } //empty constructor for JPA
@@ -49,31 +49,31 @@ public class Reviews {
         this.cafe = cafe; 
     }
 
-    public Long getReviewId(Long reviewId) {
+    public Long getReviewId() {
         return reviewId;
     }
     public void setReviewId(Long reviewId) {
         this.reviewId = reviewId;
     }
-    public String getUserName(String userName) {
+    public String getUserName() {
         return userName;
     }
     public void setUserName(String userName) {
         this.userName = userName;
     }
-    public String getReviewText(String reviewText) {
+    public String getReviewText() {
         return reviewText;
     }
     public void setReviewText(String reviewText) {
         this.reviewText = reviewText;
     }
-    public int getStarRating(int starRating) {
+    public int getStarRating() {
         return starRating;
     }
     public void setStarRating(int starRating) {
         this.starRating = starRating;
     }
-    public String getReviewDate(String reviewDate) {
+    public String getReviewDate() {
         return reviewDate;
     }
     public void setReviewDate(String reviewDate) {
@@ -85,5 +85,4 @@ public class Reviews {
     public void setCafe(Cafes cafe) {
         this.cafe = cafe; 
     }
-    
 }
