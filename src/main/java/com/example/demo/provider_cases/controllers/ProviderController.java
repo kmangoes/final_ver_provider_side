@@ -1,4 +1,4 @@
-package com.example.demo.provider_cases;
+package com.example.demo.provider_cases.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.provider_cases.Provider;
+import com.example.demo.provider_cases.ProviderService;
 
 @RestController
 public class ProviderController {
