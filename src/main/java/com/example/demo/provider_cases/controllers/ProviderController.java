@@ -1,26 +1,47 @@
 package com.example.demo.provider_cases.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.provider_cases.Provider;
 import com.example.demo.provider_cases.ProviderService;
+import org.springframework.ui.Model;
 
-@RestController
+@Controller
 public class ProviderController {
 
 @Autowired
 private ProviderService providerService;
 
+@GetMapping("/login")
+public String showLoginPage() {
+    return "login"; //show login.ftlh
+}
+@PostMapping("/login") 
+public String handleLogin(@RequestParam String email, @RequestParam String password, Model model){
+    boolean isValid = providerService.validateLogin(email, password);
+    System.out.println("isValid Result: " + isValid);
+    System.out.println("Email: " + email);
+    System.out.println("Password: " + password);
+    if (!isValid) {
+        model.addAttribute("error", "Invalid email or password");
+        return "login"; // Return to login page with error message
+    }
+    return "redirect:/user_dashboard"; // Redirect to provider's dashboard after successful login
+}
+
 @GetMapping("/providers")
-public Object getAllProviders() {
-    return providerService.getAllProviders();
+public Object getAllProviders(Model model) {
+    //return providerService.getAllProviders();
+    model.addAttribute("providers", providerService.getAllProviders());
+    return "providers"; // returns the name of the view (e.g., providers.html)
 }
 @PostMapping("/providers")
 public Provider addProvider (@RequestBody Provider provider) {

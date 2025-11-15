@@ -18,7 +18,7 @@ public class Provider {
 
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(name="email", nullable = false)
     private String email;
     @Column(nullable = false)
     private String username;

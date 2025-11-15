@@ -3,7 +3,7 @@
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
         <!-- includes bootstrap -->
-        <link rel="stylesheet" href="../css/login.css">
+        <link rel="stylesheet" href="/css/login.css">
         <meta name ="description" content="This is the provider side for the final Cafe Quest Version">
         <meta charset="utf-8">
         <title>Provider Side Login Page</title>
@@ -13,6 +13,7 @@
             <!--logo will be used as home button-->
             <img class="logo" src="../img/cafequest_logo.png" alt="cafequest_logo" width="3%" height="3%">
         </div>
+        <form action="/login" method="post">
         <div class="text-center">
             <header class="fw-bold fs-5"><strong>Admin</strong> Login</header>
             <br>
@@ -22,6 +23,7 @@
             <br>
             <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Login">
         </div>
+        </form>
         <p class="text-center"><strong>Looking for the user login? <a href="/userLogin">Go here</a></strong></p>
     </body>
 </html>

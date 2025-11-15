@@ -23,6 +23,13 @@ public Provider updateProvider(Long providerId, Provider provider) {
 public void deleteProvider(@PathVariable Long providerId) {
     providerRepository.deleteById(providerId);
 }
+public boolean validateLogin(String email, String password) {
+        Provider provider = providerRepository.findByEmail(email);
 
+        if (provider == null) {
+            return false; // email not found
+        }
 
+        return provider.getPassword().equals(password);
+}
 }
