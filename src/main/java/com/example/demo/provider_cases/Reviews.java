@@ -4,7 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
 
 
 @Entity
@@ -20,27 +22,31 @@ public class Reviews {
     private String reviewText;
     @Column(nullable = false) 
     private int starRating;
-    @Column(nullable = false)
-    private String cafeName; 
+
     @Column 
     private String reviewDate;
 
+    /* Each  */
+    @ManyToOne
+    @JoinColumn(name = "cafe_id", nullable=false)
+    private Cafes cafe; 
+
     public Reviews() { } //empty constructor for JPA
 
-    public Reviews(String userName, String reviewText, int starRating, String reviewDate, String cafeName) {
+    public Reviews(String userName, String reviewText, int starRating, String reviewDate, Cafes cafe) {
         this.userName = userName;
         this.reviewText = reviewText;
         this.starRating = starRating;
         this.reviewDate = reviewDate;
-        this.cafeName = cafeName;
+        this.cafe = cafe;
     }
-    public Reviews(Long reviewId, String userName, String reviewText, int starRating, String reviewDate, String cafeName) {
+    public Reviews(Long reviewId, String userName, String reviewText, int starRating, String reviewDate, Cafes cafe) {
         this.reviewId = reviewId;
         this.userName = userName;
         this.reviewText = reviewText;
         this.starRating = starRating;
         this.reviewDate = reviewDate;
-        this.cafeName = cafeName; 
+        this.cafe = cafe; 
     }
 
     public Long getReviewId(Long reviewId) {
@@ -73,11 +79,11 @@ public class Reviews {
     public void setReviewDate(String reviewDate) {
         this.reviewDate = reviewDate;
     }
-    public String getCafeName(String cafeName) {
-        return cafeName; 
+    public Cafes getCafe() {
+        return cafe; 
     }
-    public void setCafeName(String cafeName) {
-        this.cafeName = cafeName; 
+    public void setCafe(Cafes cafe) {
+        this.cafe = cafe; 
     }
     
 }

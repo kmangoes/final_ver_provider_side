@@ -1,10 +1,14 @@
 package com.example.demo.provider_cases;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList; 
+import java.util.List; 
 
 @Entity
 @Table(name = "cafes")
@@ -12,6 +16,7 @@ public class Cafes {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cafe_id")
     private Long cafeId;
 
     @Column(nullable = false)
@@ -23,20 +28,30 @@ public class Cafes {
     @Column(nullable = false)
     private int rating;
 
+    /* Each cafe gets its own reviews table */
+    @OneToMany(mappedBy = "cafe", cascade=CascadeType.ALL)
+    private List<Reviews> reviews = new ArrayList<>();
+
+
     public Cafes() {} //empty constructor
 
-    public Cafes (Long cafeId, String cafeName, String address, String description, int rating) {
+    /* constructor w/ cafeId */
+    public Cafes (Long cafeId, String cafeName, String address, String description, int rating, List<Reviews> reviews) {
         this.cafeId = cafeId;
         this.cafeName = cafeName;
         this.address = address;
         this.description = description;
         this.rating = rating; 
+        this.reviews = reviews;
     }
-    public Cafes (String cafeName, String address, String description, int rating) {
+
+    /* constructor without cafeId */
+    public Cafes (String cafeName, String address, String description, int rating, List<Reviews> reviews) {
         this.cafeName = cafeName;
         this.address = address;
         this.description = description;
         this.rating = rating; 
+        this.reviews = reviews; 
     }
 
     public Long getCafeId() {
@@ -68,5 +83,11 @@ public class Cafes {
     }
     public void setRating(int rating) {
         this.rating = rating;
+    }
+    public List<Reviews> getReviews() {
+        return reviews; 
+    }
+    public void setReviews(List<Reviews> reviews) {
+        this.reviews = reviews;
     }
 }
