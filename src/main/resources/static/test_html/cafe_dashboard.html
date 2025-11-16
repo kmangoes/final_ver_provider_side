@@ -6,12 +6,12 @@
         <script src="https://kit.fontawesome.com/e346597b68.js" crossorigin="anonymous"></script>
         <!-- includes bootstrap -->
         <meta name ="description" content="This is the provider side for the final Cafe Quest Version">
-        <meta charset="utf-8"> 
-        <title>Provider-Side Cafe Dashboard</title>      
+        <meta charset="utf-8">
+        <title>Provider-Side Cafes Dashboard</title>
     </head>
-<body style="background-color: #f4efe7;">
+    <body style="background-color: #f4efe7">
         <div class="topbar">
-            <img class="logo" src="../img/cafequest_logo.png" alt="cafequest_logo">
+            <img class="logo" src="../img/cafequest_logo.png" alt="cafequest_logo"> 
         </div>
         <div class="dashboard">
         <!---split into side navbar and main content-->
@@ -27,22 +27,18 @@
                 <!--Main content; two rows, top designating bar and rest of content-->
                 <!--HEADER CHANGES based on selected option in side navbar-->
                 <header class="top_elem">
-                        Cafe Management     
-                        <button class="edit_btn1" type="button">Add Cafe</button>
+                        User Management     
+                        <button class="edit_btn1" type="button" onclick="window.location.href='/cafes'">Add Cafe</button>
                 </header>
-                <main> <!--MAIN CONTENT STARTS HERE-->
-                    <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                        <p class="cafe_items">Cafe: Chandler's</p>
-                        <p class="cafe_items">Location: Downtown</p>
-                        <p class="cafe_items">Open Hours: 8 AM - 8 PM <button class="edit_btn2" type="button">Remove Cafe</button></p>
-                    </div>
-                    <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                        <p class="cafe_items">Cafe: 33 & Elm</p>
-                        <p class="cafe_items">Location: Gate City</p>
-                        <p class="cafe_items">Open Hours: 7 AM - 5:30 PM <button class="edit_btn2" type="button">Remove Cafe</button></p>
-                    </div>
+                <main> 
+                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                            <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
+                            <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
+                            <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
+                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
+                        </div>
                 </main>
             </div>
-        </div>  
-</body>
+        </div>
+    </body>
 </html>

@@ -19,7 +19,7 @@
             <br>
             <input style="width: 400px;" type="text" name="email" placeholder="Email">  
             <br>
-            <input style="width: 400px;" type="text" name="password" placeholder="Password">
+            <input style="width: 400px;" type="password" name="password" placeholder="Password">
             <br>
             <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Login">
         </div>

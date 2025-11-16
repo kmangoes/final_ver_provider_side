@@ -34,7 +34,10 @@ public String handleLogin(@RequestParam String email, @RequestParam String passw
         model.addAttribute("error", "Invalid email or password");
         return "login"; // Return to login page with error message
     }
-    return "redirect:/user_dashboard"; // Redirect to provider's dashboard after successful login
+    else {
+        System.out.println("Login successful for email: " + email);
+        return "redirect:/cafes"; // Redirect to provider's cafe dashboard after successful login
+    }
 }
 
 @GetMapping("/providers")

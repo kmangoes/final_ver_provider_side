@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="/css/user_dashboard.css">
+        <link rel="stylesheet" href="/css/cafe_dashboard.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> 
         <script src="https://kit.fontawesome.com/e346597b68.js" crossorigin="anonymous"></script>
         <!-- includes bootstrap -->
         <meta name ="description" content="This is the provider side for the final Cafe Quest Version">
         <meta charset="utf-8">
-        <title>Provider-Side User Dashboard</title>
+        <title>Provider-Side Cafes Dashboard</title>
     </head>
     <body style="background-color: #f4efe7">
         <div class="topbar">
-            <img class="logo" src="../img/cafequest_logo.png" alt="cafequest_logo">
+            <img class="logo" src="/img/cafequest_logo.png" alt="cafequest_logo">
         </div>
         <div class="dashboard">
         <!---split into side navbar and main content-->
@@ -28,20 +28,18 @@
                 <!--HEADER CHANGES based on selected option in side navbar-->
                 <header class="top_elem">
                         User Management     
-                        <button class="edit_btn1" type="button">Add User</button>
+                        <button class="edit_btn1" type="button" onclick="window.location.href='/cafes'">Add Cafe</button>
                 </header>
-                <main> <!--MAIN CONTENT STARTS HERE-->
-                    <div class="user"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                        <p class="user_items">Name: Tina Turner</p>
-                        <p class="user_items">Email: tina.turner@uncg.edu</p>
-                        <p class="user_items">Role: User <button class="edit_btn2" type="button">Remove User</button></p>
-                    </div>
-                    <div class="user"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                        <p class="user_items">Name: Bob Belcher</p>
-                        <p class="user_items">Email: bob.belcher@uncg.edu</p>
-                        <p class="user_items">Role: User <button class="edit_btn2" type="button">Remove User</button></p>
-                    </div>
+                <#list cafesList as cafe> <!-- start cafes loop -->
+                <main> 
+                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                            <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
+                            <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
+                            <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
+                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
+                        </div>
                 </main>
+                </#list> <!-- end cafes loop -->
             </div>
         </div>
     </body>
