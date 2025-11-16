@@ -87,6 +87,7 @@ main {
 }
 .edit_btn2 {
     float: right;
+    margin-top: 90px;
     margin-right: 5%;
 }
 .cafe_items:hover {

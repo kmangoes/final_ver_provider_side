@@ -47,7 +47,8 @@ public Cafes addCafe (@RequestBody Cafes cafe) {
     return cafeService.addCafe(cafe);
 }
 @DeleteMapping("/cafes/delete/{cafeId}")
-public void deleteCafe(@PathVariable Long cafeId) {
+public Object deleteCafe(@PathVariable Long cafeId) {
     cafeService.deleteCafe(cafeId);
+    return "redirect:/cafes";
 }
 }

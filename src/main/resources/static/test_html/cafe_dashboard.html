@@ -32,10 +32,10 @@
                 </header>
                 <main> 
                         <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
                             <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
                             <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
                             <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
-                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
                         </div>
                 </main>
             </div>
