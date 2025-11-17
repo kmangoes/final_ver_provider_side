@@ -30,13 +30,14 @@
                         Event Management     
                         <button class="edit_btn1" type="button" onclick="window.location.href='/cafes/createForm'">Add Event</button>
                 </header>
-                <#list cafesList as cafe> <!-- start cafes loop -->
+                <#list eventsList as event> <!-- start cafes loop -->
                 <main> 
-                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
-                            <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
-                            <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
-                            <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
+                        <div class="event"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                            <button class="edit_btn2" type="button" onclick="window.location.href='events/delete/${event.eventId}'">Remove Event</button>
+                            <p class="event_items"><strong>Event:</strong> ${event.eventName} </p>
+                            <p class="event_items"><strong>Type:</strong> ${event.eventType}</p>
+                            <p class="event_items"><strong>Date:</strong> ${event.eventDate}</p>
+                            <p class="event_items"><strong>Location:</strong> ${event.location}</p>
                         </div>
                 </main>
                 </#list> <!-- end cafes loop -->

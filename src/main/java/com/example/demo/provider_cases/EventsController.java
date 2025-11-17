@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
 
 @Controller
 public class EventsController {
@@ -16,8 +17,10 @@ public class EventsController {
 private EventsService eventsService;
 
 @GetMapping("/events")
-public Object getAllEvents() {
-    return eventsService.getAllEvents();
+public Object getAllEvents(Model model) {
+    //return eventsService.getAllEvents();
+    model.addAttribute("eventsList", eventsService.getAllEvents());
+    return "event_dashboard"; //returns event_dashboard.ftlh
 }
 @GetMapping("/events/{eventId}")
 public Object getEventById(@PathVariable Long eventId) {
@@ -35,9 +38,10 @@ public Object getEventByName(@RequestParam String eventName) {
 public Events addEvent (@RequestBody Events event) {
     return eventsService.addEvent(event);
 }
-@DeleteMapping("/events/{eventId}")
-public void deleteEvent(@PathVariable Long eventId) {
+@GetMapping("/events/{eventId}")
+public Object deleteEvent(@PathVariable Long eventId) {
     eventsService.deleteEvent(eventId);
+    return "redirect:/events";
 }
 
 }
