@@ -1,16 +1,12 @@
-package com.example.demo.provider_cases.controllers;
+package com.example.demo.provider_cases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
-
-import com.example.demo.provider_cases.CafeService;
-import com.example.demo.provider_cases.Cafes;
 
 @Controller
 public class CafesController {
@@ -40,10 +36,11 @@ public Object getCafeByName(@RequestParam String cafeName) {
 
 
 @GetMapping("/cafes/createForm")
-public String showAddCafeForm(Model model) {
+public Object showAddCafeForm(Model model) {
+    model.addAttribute("title", "Insanity Check >:(");
     model.addAttribute("cafe", new Cafes());
     System.out.println("showAddCafeForm called"); //sanity check in terminal
-    return "create_cafe_form"; 
+    return "create_cafe_form"; //shows create_cafe_form.ftlh 
 }
 @PostMapping("/cafes")
 public Object addCafe (Cafes cafe) {

@@ -1,4 +1,4 @@
-package com.example.demo.provider_cases.controllers;
+package com.example.demo.provider_cases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.example.demo.provider_cases.Provider;
-import com.example.demo.provider_cases.ProviderService;
 import org.springframework.ui.Model;
 
 @Controller

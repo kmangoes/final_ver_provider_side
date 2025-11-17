@@ -1,4 +1,4 @@
-package com.example.demo.provider_cases.controllers;
+package com.example.demo.provider_cases;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
-import com.example.demo.provider_cases.Reviews;
-import com.example.demo.provider_cases.ReviewsService;
 
 @Controller
 public class ReviewsController {

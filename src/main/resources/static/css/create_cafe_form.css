@@ -25,14 +25,14 @@ html, body {
     text-align: center; 
     padding-top: 30px;
 }
-.input {
+.rounded-pill {
+    border: 1px;
+    padding: 4px;
+}
+input[type="text"], input[type="number"] {
     padding: 4px;
     border: 1px solid black;
     border-radius: 8px;
     width: 400px;
     margin-bottom: 40px;
-}
-.rounded-pill {
-    border: 1px;
-    padding: 4px;
 }

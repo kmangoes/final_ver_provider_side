@@ -14,16 +14,18 @@
             <h5 class="page_header">Create New Cafe</h5>
         </div>
         <div class="form_inputs">
-        <form action="/cafes" method="post"></form>
-            <input class="input" type="text" name="cafe_name" placeholder="Cafe Name">
+        <form action="/cafes" method="post">
+            <!--<p>${title}</p> -->
+            <input type="text" id="cafeName" name="cafeName" placeholder="Cafe Name" value="${cafe.cafeName}" required>
             <br>
-            <input class="input" type="text" name="address" placeholder="Address">
+            <input type="text" id="address" name="address" placeholder="Address" value="${cafe.address}" required>
             <br>
-            <input class="input" type="text" name="hours" placeholder="Hours Number">
+            <input type="text" id="hours" name="hours" placeholder="Hours Number" value="${cafe.hours}" required>
             <br>
-            <input class="input" type="number" step="0.01" name="rating" placeholder="Rating (0.00 - 5.00)">
+            <input type="number" step="0.01" id="rating" name="rating" placeholder="Rating (0.00 - 5.00)" value="${cafe.rating}" required>
             <br>
-            <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Create Cafe">
+            <input type="text" id="description" name="description" placeholder="Description" value="${cafe.description}" required>
+            <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Send">
         </form>
         </div>
     </body>
