@@ -2,9 +2,8 @@ package com.example.demo.provider_cases.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,15 +37,22 @@ public Object getCafeByName(@RequestParam String cafeName) {
         return cafeService.getAllCafes();
     }
 }
-@GetMapping("/cafes/addCafeForm")
-public String showAddCafeForm() {
-    return "add_cafe_form"; // returns the name of the view (e.g., add_cafe_form.ftlh) NOT YET MADE
+
+
+@GetMapping("/cafes/createForm")
+public String showAddCafeForm(Model model) {
+    model.addAttribute("cafe", new Cafes());
+    System.out.println("showAddCafeForm called"); //sanity check in terminal
+    return "create_cafe_form"; 
 }
 @PostMapping("/cafes")
-public Cafes addCafe (@RequestBody Cafes cafe) {
-    return cafeService.addCafe(cafe);
+public Object addCafe (Cafes cafe) {
+    Cafes newCafe = cafeService.addCafe(cafe);
+    System.out.println("New cafe received: " + newCafe.getCafeName()); //sanity check in terminal 
+    return "redirect:/cafes";
 }
-@DeleteMapping("/cafes/delete/{cafeId}")
+
+@GetMapping("/cafes/delete/{cafeId}")
 public Object deleteCafe(@PathVariable Long cafeId) {
     cafeService.deleteCafe(cafeId);
     return "redirect:/cafes";

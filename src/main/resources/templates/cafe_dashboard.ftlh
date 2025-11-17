@@ -27,8 +27,8 @@
                 <!--Main content; two rows, top designating bar and rest of content-->
                 <!--HEADER CHANGES based on selected option in side navbar-->
                 <header class="top_elem">
-                        User Management     
-                        <button class="edit_btn1" type="button" onclick="window.location.href='/cafes'">Add Cafe</button>
+                        Cafe Management     
+                        <button class="edit_btn1" type="button" onclick="window.location.href='/cafes/createForm'">Add Cafe</button>
                 </header>
                 <#list cafesList as cafe> <!-- start cafes loop -->
                 <main> 
