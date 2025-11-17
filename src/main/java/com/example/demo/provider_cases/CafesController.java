@@ -14,27 +14,6 @@ public class CafesController {
 @Autowired
 private CafeService cafeService;
 
-@GetMapping("/cafes")
-public Object getAllCafes(Model model) {
-    //return cafeService.getAllCafes();
-    model.addAttribute("cafesList", cafeService.getAllCafes());
-    return "cafe_dashboard"; //returns cafe_dashboard.ftlh 
-}
-
-@GetMapping("/cafes/{cafeId}")
-public Object getCafeById(@PathVariable Long cafeId) {
-    return cafeService.getCafeById(cafeId);
-}
-@GetMapping("/cafes/cafeName")
-public Object getCafeByName(@RequestParam String cafeName) {
-    if (cafeName != null) {
-        return cafeService.getCafeByName(cafeName);
-    } else {
-        return cafeService.getAllCafes();
-    }
-}
-
-
 @GetMapping("/cafes/createForm")
 public Object showAddCafeForm(Model model) {
     model.addAttribute("title", "Insanity Check >:(");
@@ -49,9 +28,29 @@ public Object addCafe (Cafes cafe) {
     return "redirect:/cafes";
 }
 
+@GetMapping("/cafes")
+public Object getAllCafes(Model model) {
+    //return cafeService.getAllCafes();
+    model.addAttribute("cafesList", cafeService.getAllCafes());
+    return "cafe_dashboard"; //returns cafe_dashboard.ftlh 
+}
 @GetMapping("/cafes/delete/{cafeId}")
 public Object deleteCafe(@PathVariable Long cafeId) {
     cafeService.deleteCafe(cafeId);
     return "redirect:/cafes";
 }
+
+@GetMapping("/cafes/id/{cafeId}")
+public Object getCafeById(@PathVariable Long cafeId) {
+    return cafeService.getCafeById(cafeId);
+}
+@GetMapping("/cafes/cafeName")
+public Object getCafeByName(@RequestParam String cafeName) {
+    if (cafeName != null) {
+        return cafeService.getCafeByName(cafeName);
+    } else {
+        return cafeService.getAllCafes();
+    }
+}
+
 }

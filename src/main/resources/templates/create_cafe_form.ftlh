@@ -15,16 +15,16 @@
         </div>
         <div class="form_inputs">
         <form action="/cafes" method="post">
-            <!--<p>${title}</p> -->
-            <input type="text" id="cafeName" name="cafeName" placeholder="Cafe Name" value="${cafe.cafeName}" required>
+            <input type="text" id="cafeName" name="cafeName" placeholder="Cafe Name" value="${cafe.cafeName!''}" required>
             <br>
-            <input type="text" id="address" name="address" placeholder="Address" value="${cafe.address}" required>
+            <input type="text" id="address" name="address" placeholder="Address" value="${cafe.address!''}" required>
             <br>
-            <input type="text" id="hours" name="hours" placeholder="Hours Number" value="${cafe.hours}" required>
+            <input type="text" id="hours" name="hours" placeholder="Hours Number" value="${cafe.hours!''}" required>
             <br>
-            <input type="number" step="0.01" id="rating" name="rating" placeholder="Rating (0.00 - 5.00)" value="${cafe.rating}" required>
+            <input type="text" id="description" name="description" placeholder="Description" value="${cafe.description!''}" required>
             <br>
-            <input type="text" id="description" name="description" placeholder="Description" value="${cafe.description}" required>
+            <input type="number" step="0.01" id="rating" name="rating" placeholder="Rating (0.00 - 5.00)" value="${cafe.rating!''}" required>
+            <br>
             <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Send">
         </form>
         </div>
