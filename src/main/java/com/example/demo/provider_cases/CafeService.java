@@ -26,5 +26,8 @@ public Cafes addCafe(Cafes cafe){
 public void deleteCafe (Long cafeId) {
     cafesRepository.deleteById(cafeId);
 }
+public Cafes updateCafe(Long cafeId, Cafes updatedCafe) {
+    return cafesRepository.save(updatedCafe);
+}
 
 }

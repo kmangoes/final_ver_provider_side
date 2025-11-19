@@ -28,6 +28,19 @@ public Object addCafe (Cafes cafe) {
     return "redirect:/cafes";
 }
 
+@GetMapping("/cafes/updateForm/{cafeId}")
+public Object showUpdateCafeForm(@PathVariable Long cafeId, Model model) {
+    Cafes cafeToUpdate = (Cafes) cafeService.getCafeById(cafeId);
+    model.addAttribute("cafe", cafeToUpdate);
+    System.out.println("showUpdateCafeForm called for cafeId: " + cafeId); //sanity check in terminal
+    return "update_cafe_form"; //returns update_cafe_form.ftlh 
+}
+@PostMapping("/cafes/update/{cafeId}")
+public Object updateCafe(@PathVariable Long cafeId, Cafes updatedCafe) {
+    cafeService.updateCafe(cafeId, updatedCafe);
+    return "redirect:/cafes"; //redirects to cafe list after update
+}
+
 @GetMapping("/cafes")
 public Object getAllCafes(Model model) {
     //return cafeService.getAllCafes();
