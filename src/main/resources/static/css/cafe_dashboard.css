@@ -7,10 +7,17 @@ p {
     border: 1px ; 
     border-radius: 10px; 
     padding: 3px;
+    color: black; 
 }
 p:hover {
     background-color: rgba(200, 200, 200, 0.3);
     cursor: pointer; 
+}
+a {
+    text-decoration: none; 
+}
+a:hover {
+    text-decoration: none; 
 }
 main {
     margin-top: 30px; 

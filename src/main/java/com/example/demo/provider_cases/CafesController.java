@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
@@ -28,10 +29,12 @@ public Object addCafe (Cafes cafe) {
     return "redirect:/cafes";
 }
 
+
+
 @GetMapping("/cafes/updateForm/{cafeId}")
 public Object showUpdateCafeForm(@PathVariable Long cafeId, Model model) {
-    Cafes cafeToUpdate = (Cafes) cafeService.getCafeById(cafeId);
-    model.addAttribute("cafe", cafeToUpdate);
+    Cafes updatingCafe = cafeService.getCafeById(cafeId);
+    model.addAttribute("cafe", updatingCafe);
     System.out.println("showUpdateCafeForm called for cafeId: " + cafeId); //sanity check in terminal
     return "update_cafe_form"; //returns update_cafe_form.ftlh 
 }
@@ -40,6 +43,8 @@ public Object updateCafe(@PathVariable Long cafeId, Cafes updatedCafe) {
     cafeService.updateCafe(cafeId, updatedCafe);
     return "redirect:/cafes"; //redirects to cafe list after update
 }
+
+
 
 @GetMapping("/cafes")
 public Object getAllCafes(Model model) {

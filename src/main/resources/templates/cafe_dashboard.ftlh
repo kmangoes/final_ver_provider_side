@@ -19,9 +19,9 @@
                 <!--FIXED sidebar to navigate to all other pages-->
                 <p><strong><i class="fa-solid fa-circle-user"></i>   Users</strong></p>
                 <p><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p>
-                <p><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p>
+                <a href="/cafes" style="text-decoration:none;"><p style="color: black"><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p></a>
                 <hr>
-                <p class="logout_btn"><strong><i class="fa-solid fa-arrow-left"></i>   Log out</strong></p>
+                <a href="/login"><p class="logout_btn" style="color:black"><strong><i class="fa-solid fa-arrow-left"></i>  Log out</strong></p></a>
             </div>
             <div class="main_content">
                 <!--Main content; two rows, top designating bar and rest of content-->
@@ -34,6 +34,7 @@
                 <main> 
                         <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
                             <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
+                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/updateForm/${cafe.cafeId}'">Edit Cafe</button>
                             <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
                             <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
                             <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>

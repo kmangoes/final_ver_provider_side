@@ -14,8 +14,8 @@ private CafesRepository cafesRepository;
 public Object getAllCafes() {
     return cafesRepository.findAll();
 }
-public Object getCafeById(@PathVariable Long cafeId) {
-    return cafesRepository.findById(cafeId);
+public Cafes getCafeById(@PathVariable Long cafeId) {
+    return cafesRepository.findById(cafeId).orElse(null);
 }
 public Object getCafeByName(String cafeName){
     return cafesRepository.getCafeByName(cafeName);
