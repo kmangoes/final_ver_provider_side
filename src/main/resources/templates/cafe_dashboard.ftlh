@@ -18,7 +18,7 @@
             <div class="side_navbar">
                 <!--FIXED sidebar to navigate to all other pages-->
                 <p><strong><i class="fa-solid fa-circle-user"></i>   Users</strong></p>
-                <p><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p>
+                <a href="/events" style="text-decoration:none;"><p><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p></a>
                 <a href="/cafes" style="text-decoration:none;"><p style="color: black"><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p></a>
                 <hr>
                 <a href="/login"><p class="logout_btn" style="color:black"><strong><i class="fa-solid fa-arrow-left"></i>  Log out</strong></p></a>

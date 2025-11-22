@@ -14,6 +14,8 @@ public class EventsController {
     
 @Autowired
 private EventsService eventsService;
+@Autowired
+private CafeService cafesService;
 
 @GetMapping("/events")
 public Object getAllEvents(Model model) {
@@ -29,10 +31,22 @@ public Object getEventByName(@RequestParam String eventName) {
         return eventsService.getAllEvents();
     }
 }
+
+@GetMapping("/events/createForm") 
+public Object showAddEventForm(Model model) {
+    System.out.println("Reached showAddEventForm method in EventsController");
+    model.addAttribute("title", "Sanity check"); 
+    model.addAttribute("event", new Events()); //freemarker objects calling event.(X)
+    model.addAttribute("cafes", cafesService.getAllCafes()); //get list of cafe names
+    
+    return "create_event_form"; //shows create_event_form.ftlh 
+}
 @PostMapping("/events")
 public Events addEvent (@RequestBody Events event) {
+    System.out.println("Event added: " + event);
     return eventsService.addEvent(event);
 }
+
 @GetMapping("/events/{eventId}")
 public Object deleteEvent(@PathVariable Long eventId) {
     eventsService.deleteEvent(eventId);

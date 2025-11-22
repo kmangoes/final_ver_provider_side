@@ -18,8 +18,8 @@
             <div class="side_navbar">
                 <!--FIXED sidebar to navigate to all other pages-->
                 <p><strong><i class="fa-solid fa-circle-user"></i>   Users</strong></p>
-                <p><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p>
-                <p><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p>
+                <a href="/events" style="text-decoration:none;"><p style="color:black;"><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p></a>
+                <a href="/cafes" style="text-decoration:none;"><p style="color: black;"><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p></a>
                 <hr>
                 <p class="logout_btn"><strong><i class="fa-solid fa-arrow-left"></i>   Log out</strong></p>
             </div>
@@ -27,8 +27,8 @@
                 <!--Main content; two rows, top designating bar and rest of content-->
                 <!--HEADER CHANGES based on selected option in side navbar-->
                 <header class="top_elem">
-                        Event Management     
-                        <button class="edit_btn1" type="button" onclick="window.location.href='/cafes/createForm'">Add Event</button>
+                        Upcoming Events     
+                        <button class="edit_btn1" type="button" onclick="window.location.href='/events/createForm'">Add Event</button>
                 </header>
                 <main> 
                     <!--<#list eventsList as event>  --> 
