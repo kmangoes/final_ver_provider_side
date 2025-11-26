@@ -23,9 +23,9 @@ public class Events {
     @Column (nullable = false)
     private String eventDate;
     @Column (nullable = false)
-    private String location;
-    @Column 
     private String description;
+    @Column (nullable = false)
+    private String location;
 
     public Events() { }
 

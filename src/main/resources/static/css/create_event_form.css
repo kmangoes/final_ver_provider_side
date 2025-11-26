@@ -26,24 +26,25 @@ html, body {
     padding-top: 30px;
 }
 .rounded-pill {
-    border: 1px;
+    margin-top: 40px;
     padding: 4px;
+    text-align: center;
 }
 input[type="text"], input[type="date"] {
     padding: 4px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 8px;
     width: 400px;
     margin-bottom: 40px;
 }
-select.form_control {
-    border: 1px solid black;
-    margin-bottom: 200px;
-}
-.location_select {
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 8px;
+.text-center {
+    text-align: center;
     width: 400px;
     margin-bottom: 40px;
+}
+.rounded-pill {
+    cursor: pointer;
+}
+.non-option {
+    color: gray;
 }

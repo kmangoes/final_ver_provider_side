@@ -14,16 +14,10 @@
             <h5 class="page_header">Create New Event</h5>
         </div>
         <div class="form_inputs">
+
+
         <form action="/events" method="post">
             <input type="text" id="eventName" name="eventName" placeholder="Event Name" value="${event.eventName!''}" required>
-            <br>
-            <div class="location_select"></div>
-                <select class="form-control" name="location" required> <!---selected option will go to location attribute of Event item-->
-                    <#list cafes as cafe>
-                    <option value="${cafe.cafeName}">${cafe.cafeName}</option>
-                    </#list>
-                </select>
-            </div>
             <br>
             <input type="text" id="eventType" name="eventType" placeholder="Event Type" value="${event.eventType!''}" required>
             <br>
@@ -31,8 +25,19 @@
             <br>
             <input type="text" id="description" name="description" placeholder="Description" value="${event.description!''}" required>
             <br>
-            <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Send">
+            <div class="location_select">
+                <select class="text-center border-2" style="background-color: white; padding: 5px; width:400px; border-radius: 8px; border-width: 1px;" name="location" required>
+                    <#list cafes as cafe>
+                    <option value="Choose a cafe" class="non-option" disabled selected>Choose a cafe</option>
+                    <option value="${cafe.cafeName}">${cafe.cafeName}</option>
+                    </#list>
+                </select>
+            </div>
+            <input class="rounded-pill" style="margin-top: 40px; background-color: black; color: white; width: 400px;" type="submit" value="Send">
         </form>
+
+
+        
         </div>
     </body>
 </html>

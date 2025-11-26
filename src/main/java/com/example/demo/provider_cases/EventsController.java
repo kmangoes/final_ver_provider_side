@@ -38,13 +38,13 @@ public Object showAddEventForm(Model model) {
     model.addAttribute("title", "Sanity check"); 
     model.addAttribute("event", new Events()); //freemarker objects calling event.(X)
     model.addAttribute("cafes", cafesService.getAllCafes()); //get list of cafe names
-    
     return "create_event_form"; //shows create_event_form.ftlh 
 }
 @PostMapping("/events")
-public Events addEvent (@RequestBody Events event) {
-    System.out.println("Event added: " + event);
-    return eventsService.addEvent(event);
+public Object addEvent (Events event) {
+    Events newEvent = eventsService.addEvent(event);
+    System.out.println("Event added: " + newEvent.getEventName()); //sanity check 
+    return "redirect:/events";
 }
 
 @GetMapping("/events/{eventId}")
