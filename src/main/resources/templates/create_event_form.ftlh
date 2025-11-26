@@ -14,8 +14,6 @@
             <h5 class="page_header">Create New Event</h5>
         </div>
         <div class="form_inputs">
-
-
         <form action="/events" method="post">
             <input type="text" id="eventName" name="eventName" placeholder="Event Name" value="${event.eventName!''}" required>
             <br>
@@ -35,9 +33,6 @@
             </div>
             <input class="rounded-pill" style="margin-top: 40px; background-color: black; color: white; width: 400px;" type="submit" value="Send">
         </form>
-
-
-        
         </div>
     </body>
 </html>

@@ -14,8 +14,8 @@ private EventsRepository eventsRepository;
 public Object getAllEvents() {
     return eventsRepository.findAll();
 }
-public Object getEventById(@PathVariable Long id) {
-    return eventsRepository.findById(id);
+public Events getEventById(@PathVariable Long id) {
+    return eventsRepository.findById(id).orElse(null);
 }
 public Object getEventByName(String eventName) {
     return eventsRepository.getEventByName(eventName);
