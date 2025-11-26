@@ -81,13 +81,12 @@ main {
     border: 1px solid black; 
     border-radius: 8px;
     width: 90%; 
-    height: 125px;
     margin-bottom: 30px;
     padding-left: 15px;
 }
 .edit_btn2 {
     float: right;
-    margin-right: 5%;
+    margin-right: 4%;
 }
 .event_items:hover {
     background-color: #f4efe7;

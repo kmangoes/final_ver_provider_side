@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
@@ -47,7 +46,7 @@ public Object addEvent (Events event) {
     return "redirect:/events";
 }
 
-@GetMapping("/events/{eventId}")
+@GetMapping("/events/delete/{eventId}")
 public Object deleteEvent(@PathVariable Long eventId) {
     eventsService.deleteEvent(eventId);
     return "redirect:/events";
