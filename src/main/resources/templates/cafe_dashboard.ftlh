@@ -32,7 +32,7 @@
                 </header>
                 <#list cafesList as cafe> <!-- start cafes loop -->
                 <main> 
-                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                        <div class="cafe" style="border-width:2px;"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
                             <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
                             <button class="edit_btn2" type="button" onclick="window.location.href='cafes/updateForm/${cafe.cafeId}'">Edit Cafe</button>
                             <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>

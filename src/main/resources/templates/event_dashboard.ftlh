@@ -21,7 +21,7 @@
                 <a href="/events" style="text-decoration:none;"><p style="color:black;"><strong><i class="fa-solid fa-calendar"></i>   Events</strong></p></a>
                 <a href="/cafes" style="text-decoration:none;"><p style="color: black;"><strong><i class="fa-solid fa-location-dot"></i>  Cafes</strong></p></a>
                 <hr>
-                <p class="logout_btn"><strong><i class="fa-solid fa-arrow-left"></i>   Log out</strong></p>
+                <a href="/login" style="color: black; text-decoration:none;"><p class="logout_btn"><strong><i class="fa-solid fa-arrow-left"></i>   Log out</strong></p></a>
             </div>
             <div class="main_content">
                 <!--Main content; two rows, top designating bar and rest of content-->
@@ -32,7 +32,7 @@
                 </header>
                 <main> 
                     <#list eventsList as event> 
-                        <div class="event" style="height:190px; padding: 10px;"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                        <div class="event" style="border-width:2px; height:190px; padding: 10px;"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
                             <button style="margin-top: 145px;" class="edit_btn2" type="button" onclick="window.location.href='events/updateForm/${event.eventId}'">Edit Event</button>
                             <button style="margin-top: 145px;" class="edit_btn2" type="button" onclick="window.location.href='events/delete/${event.eventId}'">Remove Event</button>
                             <p class="event_items"><strong>Event:</strong> ${event.eventName} </p>

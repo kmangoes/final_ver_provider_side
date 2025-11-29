@@ -24,9 +24,9 @@
             <input type="text" id="description" name="description" placeholder="Description" value="${event.description!''}" required>
             <br>
             <div class="location_select">
-                <select class="text-center border-2" style="background-color: white; padding: 5px; width:400px; border-radius: 8px; border-width: 1px;" name="location" required>
-                    <#list cafes as cafe>
+                <select class="text-center border-2" style="background-color: white; padding: 5px; width:400px; border-color: black; border-radius: 8px; border-width: 2px;" name="location" required>
                     <option value="Choose a cafe" class="non-option" disabled selected>Choose a cafe</option>
+                    <#list cafes as cafe>
                     <option value="${cafe.cafeName}">${cafe.cafeName}</option>
                     </#list>
                 </select>
