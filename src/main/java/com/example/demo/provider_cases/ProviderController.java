@@ -24,15 +24,19 @@ public String showLoginPage() {
     return "login"; //show login.ftlh
 }
 @PostMapping("/login") 
-public String handleLogin(@RequestParam String email, @RequestParam String password,        @RequestParam(name = "g-recaptcha-response") String recaptchaResponse, Model model) {
+public String handleLogin(@RequestParam String email, @RequestParam String password, @RequestParam(name="g-recaptcha-response") String recaptchaResponse, Model model) {
     boolean isValid = providerService.validateLogin(email, password);
     System.out.println("isValid Result: " + isValid);
     System.out.println("Email: " + email);
     System.out.println("Password: " + password);
     
     boolean isRecaptchaValid = recaptchaService.verify(recaptchaResponse);
-    System.out.println("isRecaptchaValid Result: " + isRecaptchaValid);
+    System.out.println("isRecaptchaValid Result: " + isRecaptchaValid); //sanity check 
     
+    if (!isRecaptchaValid) {
+        model.addAttribute("error", "reCAPTCHA verification failed. Please try again.");
+        return "login"; // Return to login page with error message
+    }
     if (!isValid) {
         model.addAttribute("error", "Invalid email or password");
         return "login"; // Return to login page with error message

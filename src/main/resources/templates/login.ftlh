@@ -30,6 +30,11 @@
             <!-- recaptcha API content END -->
         </div>
         </form>
+        <!-- Popup for incorrect login START -->
+        <#if error??> <!--if error is an attribute, then execute if body-->
+            <script>alert("${error}");</script>
+        </#if>
+        <!-- Popup for incorrect login END -->
         <p class="text-center"><strong>Looking for the user login? <a href="/userLogin">Go here</a></strong></p>
     </body>
 </html>

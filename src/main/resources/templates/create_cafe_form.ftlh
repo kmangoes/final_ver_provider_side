@@ -15,11 +15,11 @@
         </div>
         <div class="form_inputs">
         <form action="/cafes" method="post">
-            <input type="text" id="cafeName" name="cafeName" placeholder="Cafe Name" value="${cafe.cafeName!''}" required>
+            <input type="text" id="cafeName" name="cafeName" placeholder="Cafe Name" value="${cafe.cafeName!''}" required style="text-transform: capitalize;" oninput="this.value=this.value.replace(/\b\w/g, c => c.toUpperCase())">
             <br>
-            <input type="text" id="address" name="address" placeholder="Address" value="${cafe.address!''}" required>
+            <input type="text" id="address" name="address" placeholder="Address" value="${cafe.address!''}" required style="text-transform: capitalize;" oninput="this.value=this.value.replace(/\b\w/g, c => c.toUpperCase())">
             <br>
-            <input type="text" id="hours" name="hours" placeholder="Hours Number" value="${cafe.hours!''}" required>
+            <input type="text" id="hours" name="hours" placeholder="Hours (Format: XX:XX AM - XX:XX PM)" value="${cafe.hours!''}" required pattern="^(0?[1-9]|1[0-2]):[0-5][0-9] (AM|PM|am|pm) - (0?[1-9]|1[0-2]):[0-5][0-9] (AM|PM|am|pm)$">
             <br>
             <input type="text" id="description" name="description" placeholder="Description" value="${cafe.description!''}" required>
             <br>

@@ -15,9 +15,9 @@
         </div>
         <div class="form_inputs">
         <form action="/events" method="post">
-            <input type="text" id="eventName" name="eventName" placeholder="Event Name" value="${event.eventName!''}" required>
+            <input type="text" id="eventName" name="eventName" placeholder="Event Name" value="${event.eventName!''}" required style="text-transform:capitalize;" oninput="this.value=this.value.replace(/\b\w/g, c => c.toUpperCase())">
             <br>
-            <input type="text" id="eventType" name="eventType" placeholder="Event Type" value="${event.eventType!''}" required>
+            <input type="text" id="eventType" name="eventType" placeholder="Event Type" value="${event.eventType!''}" required style="text-transform:capitalize;" oninput="this.value=this.value.replace(/\b\w/g, c => c.toUpperCase())">
             <br>
             <input type="date" id="eventDate" name="eventDate" placeholder="Event Date" value="${event.eventDate!''}" required>
             <br>
