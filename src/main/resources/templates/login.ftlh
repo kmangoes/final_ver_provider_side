@@ -18,9 +18,9 @@
         <div class="text-center">
             <header class="fw-bold fs-5"><strong>Admin</strong> Login</header>
             <br>
-            <input style="width: 400px;" type="text" name="email" placeholder="Email">  
+            <input autocomplete="off" style="width: 400px;" type="text" name="email" placeholder="Email">  
             <br>
-            <input style="width: 400px;" type="password" name="password" placeholder="Password">
+            <input autocomplete="off" style="width: 400px;" type="password" name="password" placeholder="Password">
             <br>
             <input class="rounded-pill" style="background-color: black; color: white; width: 400px;" type="submit" value="Login">
             <!-- recaptcha API content START -->

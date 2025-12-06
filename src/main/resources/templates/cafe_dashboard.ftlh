@@ -30,17 +30,19 @@
                         Cafe Management     
                         <button class="edit_btn1" type="button" onclick="window.location.href='/cafes/createForm'">Add Cafe</button>
                 </header>
-                <#list cafesList as cafe> <!-- start cafes loop -->
+                <#list cafesList as cafe> <!-- START cafes loop -->
                 <main> 
-                        <div class="cafe" style="border-width:2px;"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                    <a href="https://www.google.com/search?q=${cafe.cafeName?url}" target="_blank" style="text-decoration: none; color: black;">
+                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
                             <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
                             <button class="edit_btn2" type="button" onclick="window.location.href='cafes/updateForm/${cafe.cafeId}'">Edit Cafe</button>
                             <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
                             <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
                             <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
                         </div>
+                    </a>
                 </main>
-                </#list> <!-- end cafes loop -->
+                </#list> <!-- END cafes loop -->
             </div>
         </div>
     </body>
