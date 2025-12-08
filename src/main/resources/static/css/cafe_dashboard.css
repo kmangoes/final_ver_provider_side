@@ -21,6 +21,7 @@ a:hover {
 }
 main {
     margin-top: 30px; 
+    margin-bottom: 30px; 
 }
 
 .top_elem {
@@ -85,19 +86,26 @@ main {
     text-align: left; 
 }
 .cafe {
+    background-color: #f7f6f6;
     border: 2px solid black; 
-    border-radius: 8px;
+    border-radius: 15px;
     width: 90%; 
-    height: 125px;
-    margin-bottom: 30px;
+    height: auto;
+    margin-bottom: 40px;
+    padding-top: 20px; 
     padding-left: 15px;
 }
+.cafe:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s;
+}
 .edit_btn2 {
+    z-index: 1000; 
     float: right;
-    margin-top: 90px;
+    margin-top: 100px;
     margin-right: 5%;
 }
 .cafe_items:hover {
-    background-color: #f4efe7;
+    background-color: #f7f6f6;
     cursor:default
 }

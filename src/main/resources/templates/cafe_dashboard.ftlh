@@ -32,15 +32,14 @@
                 </header>
                 <#list cafesList as cafe> <!-- START cafes loop -->
                 <main> 
-                    <a href="https://www.google.com/search?q=${cafe.cafeName?url}" target="_blank" style="text-decoration: none; color: black;">
-                        <div class="cafe"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
-                            <button class="edit_btn2" type="button" onclick="window.location.href='cafes/updateForm/${cafe.cafeId}'">Edit Cafe</button>
+                    <div class="cafe" onclick="window.open('https://www.google.com/search?q=${cafe.cafeName?url}')"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
+                            <button class="edit_btn2" type="button" onclick="event.stopPropagation(); window.location.href='cafes/delete/${cafe.cafeId}'">Remove Cafe</button>
+                            <button class="edit_btn2" type="button" onclick="event.stopPropagation(); window.location.href='cafes/updateForm/${cafe.cafeId}'">Edit Cafe</button>
+                            <button class="edit_btn2" type="button" onclick="event.stopPropagation(); window.location.href='reviews/${cafe.cafeId}'">View Reviews</button>
                             <p class="cafe_items"><strong>Cafe:</strong> ${cafe.cafeName} </p>
                             <p class="cafe_items"><strong>Location:</strong> ${cafe.address}</p>
                             <p class="cafe_items"><strong>Hours:</strong> ${cafe.hours}</p>
-                        </div>
-                    </a>
+                    </div>
                 </main>
                 </#list> <!-- END cafes loop -->
             </div>

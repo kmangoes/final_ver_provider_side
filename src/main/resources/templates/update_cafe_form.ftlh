@@ -10,7 +10,7 @@
     </head>
     <body style="background-color: #f4efe7;">
         <div class="topbar">
-            <img class="logo" src="/img/cafequest_logo.png" alt="cafequest_logo" height="3%">
+            <a href="/cafes" style="text-decoration: none;"><img class="logo" src="/img/cafequest_logo.png" alt="cafequest_logo" height="3%"></a>
             <h5 class="page_header">Update a Cafe</h5>
         </div>
         <div class="form_inputs">

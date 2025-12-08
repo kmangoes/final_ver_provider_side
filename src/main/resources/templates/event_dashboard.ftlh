@@ -32,8 +32,7 @@
                 </header>
                 <main> 
                     <#list eventsList as event> 
-                        <div class="event" style="border-width:2px; height:190px; padding: 10px;"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
-                            <button style="margin-top: 145px;" class="edit_btn2" type="button" onclick="window.location.href='events/updateForm/${event.eventId}'">Edit Event</button>
+                        <div class="event"> <!--MAIN CONTENT MADE UP COMPLETELY OF CARDS-->
                             <button style="margin-top: 145px;" class="edit_btn2" type="button" onclick="window.location.href='events/delete/${event.eventId}'">Remove Event</button>
                             <p class="event_items"><strong>Event:</strong> ${event.eventName} </p>
                             <p class="event_items"><strong>Type:</strong> ${event.eventType}</p>

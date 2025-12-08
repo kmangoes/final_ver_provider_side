@@ -78,17 +78,24 @@ main {
     text-align: left; 
 }
 .event {
-    border: 1px solid black; 
-    border-radius: 8px;
+    background-color: #f7f6f6;
+    border: 2px solid black; 
+    border-radius: 15px;
     width: 90%; 
-    margin-bottom: 30px;
+    height: auto; 
+    margin-bottom: 40px;
+    padding-top: 20px; 
     padding-left: 15px;
+}
+.event:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s;
 }
 .edit_btn2 {
     float: right;
-    margin-right: 6%;
+    margin-right: 5%;
 }
 .event_items:hover {
-    background-color: #f4efe7;
+    background-color: #f7f6f6;
     cursor:default
 }
